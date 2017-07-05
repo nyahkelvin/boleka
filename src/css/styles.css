@@ -1,0 +1,85 @@
+body {  padding-top: 30px;  padding-bottom: 20px;}
+.jumbotron {background-image:url('//www.bobitstudios.com/wp-content/uploads/2013/03/fabric_of_squares_gray.png');background-attachment:fixed;min-height:450px;margin-bottom:0px;border-bottom: 1px solid #e5e5e5;}
+.jumbotron .heading {  margin-top: 0;  padding-top: 20px;  font-size: 70px;  font-weight: normal;  line-height: 1;  letter-spacing: -1px;  background: none;}
+.jumbotron .subheading {  margin: 10px 0 0;  font-size: 21px;  line-height: 1.5;  color: #888;}
+.display-box-label {  font-size: 0.8em;  position: absolute;  right: -80px;  top: -8px;}
+.display-box {  background-color: #f7fcf7;  border-radius: 5px;  font-size: 0.8em;  height: 23px;  right: -140px;  padding-top: 2px;  position: absolute;  text-align: center;  top: -10px;  width: 50px;  font-weight: bold;}
+
+#right-panel{margin-left: 15px;border:1px solid #e5e5e5;background-color:#fff;padding-left:15px;padding-top:15px;color:#464646;font-size:15px;}
+#right-panel li{padding-left: 0px; padding-bottom:5px; list-style: none;font-size:13px;}
+#right-panel a{ color:#666}
+#right-panel a:hover{color:#069}
+#white-space{padding: 10px;}
+#right-panel hr {display: block;margin: 20px 0;width: 80%;height: 1px;background: #e8e8e8;border: none;}
+
+#left-panel{border:1px solid #e5e5e5;background-color:#fff;padding-left:20px;padding-right:20px;padding-top:15px;color:#464646;font-size:15px;}
+
+#left-panel a{ color:#069}
+#left-panel a:hover{color:#069; text-decoration:underline;}
+#left-space{padding: 10px;}
+#left-panel hr {display: block;margin: 20px 0;width: 100%;height: 1px;background: #e8e8e8;border: none;}
+#left-panel .description{line-height: 17px;color: #333;font-family: Arial,sans-serif; font-size:13px;}
+#left-panel h3{color: #069; font-size:14px; font-weight:bold;margin-bottom:5px;}
+#left-panel h4{color: #666; font-size:16px; font-weight:bold;margin-bottom:5px;}
+
+/*MARKET BOARD - DISPLAY*/
+.borrow_header {color: #069; font-size:12px; font-weight:bold;}
+.borrow_header hr {display: block;margin: 20px 0;width: 100%;height: 1px;background: #e8e8e8;border: none;}
+.hpanel.hgreen .panel-body {  border-top: 2px solid #62cb31;}
+.hpanel.hblue .panel-body {  border-top: 2px solid #3498db;}
+.hpanel.hwarning .panel-body {  border-top: 2px solid #FFBE00;}
+.hpanel .panel-body {  background: #fff;  border: 1px solid #e4e5e7;  border-radius: 2px;  padding: 20px;  position: relative;}
+.panel-body {  padding: 15px;}
+.hpanel > .panel-footer {  color: inherit;  border: 1px solid #e4e5e7;  border-top: none;  font-size: 90%;  background: #f7f9fa;}
+.panel-footer {  padding: 10px 15px;  background-color: #f5f5f5;  border-top: 1px solid #ddd;  border-bottom-right-radius: 3px;  border-bottom-left-radius: 3px;}
+.social-board .social-profile img {  height: 42px;  width: 42px;  border-radius: 50%;}
+.projects-separtor{  margin-bottom: 15px;}
+.projects .project-label {    font-weight: 600;}
+.projects .hpanel .panel-body {    border-bottom: none}
+.projects .hpanel:last-child .panel-body {    border-bottom: 1px solid #e4e5e7}
+.projects .hpanel:last-child .panel-body {    border-bottom: 1px solid #e4e5e7}
+.projects .hpanel h4 a {    color: #6a6c6f;    text-decoration: none;}
+.projects .project-people img {    width: 28px;    height: 28px;    margin-left: 2px;    margin-bottom: 4px}
+.projects .project-info {    text-align: right}
+@media (max-width: 768px) {    .projects .project-info {        text-align: left    }}
+.market-header{  margin: 0 0 10px 10px;  font-size: 90%;}
+.text-success {  color: #62cb31;}
+.text-warning{  color: #FFBE00;}
+
+/*SOCIAL BOARD - RESPOND*/
+.social-board .social-profile img {    height: 42px;    width: 42px;    border-radius: 50%}
+.social-board .social-profile h5 {    margin-top: 5px;    margin-bottom: 0px}
+.social-board .social-form {    margin: 10px 0}
+.social-board .social-form input {    font-size: 12px;    padding: 2px 12px;    height: 28px}
+.social-talk .social-profile img {    height: 32px;    width: 32px;    border-radius: 50%}
+.social-talk .text-muted {    color: #aaacae}
+.social-talk {    margin-bottom: 10px}
+.social-talk .social-content {    margin-top: 2px}
+.font-bold {  font-weight: 600;}
+.comment-input{height:25px;}
+
+
+.center-div{text-align: center;vertical-align: middle;}
+.valign{vertical-align:top;}
+.valignMiddle{vertical-align:middle;}
+.valignCentre{vertical-align:center;}
+.tableSpace{margin-bottom:10px;border:1px solid #e5e5e5; padding:15px;}
+.calculator-text{
+    font-family: Omnes,verdana,sans-serif;
+    font-weight: bold;
+    color: slategrey;
+    padding-right: 15px;
+}
+table {border: none;}
+.text-padding{
+    margin: 5px;
+}
+.marketplace-sidebar{
+    border:1px solid #e5e5e5;background-color:#fff; padding: 15px;
+}
+.animation{
+   animation-delay: 0.5s; -webkit-animation-delay: 0.5s;
+}
+.padding-text{
+    padding: 5px;
+}
