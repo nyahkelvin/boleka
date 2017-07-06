@@ -7,7 +7,7 @@ class MarketBox extends Component {
 
   render() {
     return (
-      <Box loans={this.props.loans} />
+      <Box loans={this.props.loans} addBid={this.props.addBid} />
     )
   }
 }

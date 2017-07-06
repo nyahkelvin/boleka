@@ -77,7 +77,7 @@ class Box extends Component {
                             </div>
                         </div>
                         {/* Bidders */}
-                        <Bidders bid={loan.bids}/>
+                        <Bidders loan={loan} addBid={this.props.addBid}/>
                     </div>
                 )
             })

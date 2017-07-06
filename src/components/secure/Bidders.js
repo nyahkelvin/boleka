@@ -17,7 +17,17 @@ class Bidders extends Component {
 
     onSubmit(e) {
         e.preventDefault()
-        console.log('submitted',this.state)
+        let bid = {
+            bidder: '@dynamo',
+            bidder_avatar: 'http://boleka.co.za/images/a1.jpg',
+            bid_date: '21.07.2015',
+            bid_amount: 8200,
+            bid_interest: 12.5
+        }
+        this
+            .props
+            .addBid(this.props.loan.id, bid)
+
     }
 
     onChange(e) {
@@ -30,7 +40,8 @@ class Bidders extends Component {
     render() {
         let bids = this
             .props
-            .bid
+            .loan
+            .bids
             .map((bid, i) => {
                 return (
                     <div className="social-talk" key={i}>
