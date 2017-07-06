@@ -59,27 +59,16 @@ body {  padding-top: 30px;  padding-bottom: 20px;}
 .comment-input{height:25px;}
 
 
-.center-div{text-align: center;vertical-align: middle;}
-.valign{vertical-align:top;}
-.valignMiddle{vertical-align:middle;}
-.valignCentre{vertical-align:center;}
-.tableSpace{margin-bottom:10px;border:1px solid #e5e5e5; padding:15px;}
-.calculator-text{
-    font-family: Omnes,verdana,sans-serif;
-    font-weight: bold;
-    color: slategrey;
-    padding-right: 15px;
-}
-table {border: none;}
-.text-padding{
-    margin: 5px;
-}
-.marketplace-sidebar{
-    border:1px solid #e5e5e5;background-color:#fff; padding: 15px;
-}
-.animation{
-   animation-delay: 0.5s; -webkit-animation-delay: 0.5s;
-}
-.padding-text{
-    padding: 5px;
-}
+.center-div{ text-align: center;vertical-align: middle; }
+.valign{ vertical-align:top; }
+.valignMiddle{ vertical-align:middle; }
+.valignCentre{ vertical-align:center; }
+.tableSpace{ margin-bottom:10px;border:1px solid #e5e5e5; padding:15px; }
+.calculator-text{ font-family: Omnes,verdana,sans-serif;font-weight: bold;color: slategrey;padding-right: 15px; }
+table { border: none; }
+.text-padding{ margin: 5px; }
+.marketplace-sidebar{ border:1px solid #e5e5e5;background-color:#fff; padding: 15px; }
+.animation{ animation-delay: 0.5s; -webkit-animation-delay: 0.5s; }
+.padding-text{ padding: 5px; }
+
+#sidebar { position: -webkit-sticky; position: sticky;top: 0; }
