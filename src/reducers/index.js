@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux-immutable'
 
 import loanReducer from './loanReducer'
 import userReducer from './userReducer'

@@ -7,6 +7,8 @@ class Box extends Component {
         let box = this
             .props
             .loans
+            .get('loans')
+            .toJS()
             .map((loan, i) => {
                 return (
                     <div className={`hpanel ${loan.risk_alert} projects-separtor`} key={i}>

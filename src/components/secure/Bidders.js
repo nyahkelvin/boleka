@@ -1,11 +1,16 @@
 import React, {Component} from 'react'
 
+import TimeAgo from 'react-timeago'
+import faker from 'faker'
+
+
 class Bidders extends Component {
     constructor(props) {
         super(props)
         this.state = {
             percentage: '',
-            bid_amount: ''
+            bid_amount: '',
+            error: null
         }
         this.onSubmit = this
             .onSubmit
@@ -17,16 +22,21 @@ class Bidders extends Component {
 
     onSubmit(e) {
         e.preventDefault()
-        let bid = {
-            bidder: '@dynamo',
-            bidder_avatar: 'http://boleka.co.za/images/a1.jpg',
-            bid_date: '21.07.2015',
-            bid_amount: 8200,
-            bid_interest: 12.5
+        console.log('submitted')
+        let newBid = {
+            bidder: `@${faker.name.findName()}`,
+            bidder_avatar: `${faker.image.avatar()}`,
+            bid_date: new Date().toJSON(),
+            bid_amount: this.state.bid_amount,
+            bid_interest: this.state.percentage
         }
         this
             .props
-            .addBid(this.props.loan.id, bid)
+            .addBid(this.props.loan, newBid)
+            this.setState({
+                percentage: '',
+                bid_amount: ''
+            })
 
     }
 
@@ -52,7 +62,7 @@ class Bidders extends Component {
 
                             <div className="media-body">
                                 <span className="font-bold">{bid.bidder}</span>
-                                <small className="text-muted padding-text">{bid.bid_date}</small>
+                                <small className="text-muted padding-text"><TimeAgo date={bid.bid_date} /></small>
 
                                 <div className="social-content">
                                     R{bid.bid_amount}
@@ -83,6 +93,7 @@ class Bidders extends Component {
                                             type="text"
                                             value={this.state.bid_amount}
                                             onChange={this.onChange}
+                                            autoComplete="off"
                                             className="form-control"
                                             name="bid_amount"
                                             placeholder="Amount"/>
@@ -94,6 +105,7 @@ class Bidders extends Component {
                                             type="text"
                                             value={this.state.percentage}
                                             onChange={this.onChange}
+                                            autoComplete="off"
                                             className="form-control interest"
                                             name="percentage"
                                             maxLength="4"

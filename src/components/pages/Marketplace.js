@@ -18,7 +18,7 @@ class Marketplace extends Component {
 
       <div className="row projects">
         <div className="col-md-8 ">
-          <MarketBox loans={this.props.loans} addBid={addBid}/>
+          <MarketBox loans={this.props.loan} addBid={this.props.addBid}/>
         </div>
         <Sidebar/>
 
@@ -28,7 +28,7 @@ class Marketplace extends Component {
 }
 
 const mapSateToProps = state => {
-  return {loans: state.loans.loans}
+  return {loan:  state.get('loans')}
 }
 
 

@@ -1,24 +1,18 @@
 import uuid from 'uuid'
 
-import a1 from '../images/a1.jpg'
-import a2 from '../images/a2.jpg'
-import a3 from '../images/a3.jpg'
-import a4 from '../images/a4.jpg'
-import a5 from '../images/a5.jpg'
-import a6 from '../images/a6.jpg'
+import faker from 'faker'
+import Immutable from 'immutable';
 
-const initialState = {
+const initialState = Immutable.fromJS({
     loans: [
         {
             id: uuid.v4(),
-            borrower_avatar: `${a5}`,
+            borrower_avatar: `${faker.image.avatar()}`,
             loan_amount: 6800,
             balance: 600,
-            time_left: 12,
+            time_left: 78,
             loan_type: 'Payday loan',
-            description: 'It is a long established fact that a reader will be distracted by the readable c' +
-                    'ontent of a page when looking at its layout. The point of using Lorem Ipsum is t' +
-                    'hat it has...',
+            description: `${faker.lorem.paragraph()}`,
             loan_interest: 11.8,
             risk_level: 'text-success',
             risk_alert: 'hgreen',
@@ -26,35 +20,33 @@ const initialState = {
             loan_progress: 100,
             bids: [
                 {
-                    bidder: '@batmanTrader',
-                    bidder_avatar: `${a4}`,
-                    bid_date: '21.07.2015',
-                    bid_amount: 8200,
-                    bid_interest: 12.5
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
+                    bid_date: `${faker.date.recent()}`,
+                    bid_amount: 3700,
+                    bid_interest: 11.5
                 }, {
-                    bidder: '@invtGuru',
-                    bidder_avatar: `${a6}`,
-                    bid_date: '21.07.2017',
-                    bid_amount: 6000,
-                    bid_interest: 13
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
+                    bid_date: `${faker.date.recent()}`,
+                    bid_amount: 2300,
+                    bid_interest: 8
                 }, {
-                    bidder: '@banknotes97',
-                    bidder_avatar: `${a2}`,
-                    bid_date: '06.07.2017',
-                    bid_amount: 340,
-                    bid_interest: 10
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
+                    bid_date: `${faker.date.recent()}`,
+                    bid_amount: 150,
+                    bid_interest: 11
                 }
             ]
         }, {
             id: uuid.v4(),
-            borrower_avatar: `${a5}`,
+            borrower_avatar: `${faker.image.avatar()}`,
             loan_amount: 9500,
             balance: 600,
-            time_left: 12,
+            time_left: 160,
             loan_type: 'Payday loan',
-            description: 'It is a long established fact that a reader will be distracted by the readable c' +
-                    'ontent of a page when looking at its layout. The point of using Lorem Ipsum is t' +
-                    'hat it has...',
+            description: `${faker.lorem.paragraph()}`,
             loan_interest: 11.8,
             risk_level: 'text-success',
             risk_alert: 'hgreen',
@@ -62,71 +54,67 @@ const initialState = {
             loan_progress: 70,
             bids: [
                 {
-                    bidder: '@batmanTrader',
-                    bidder_avatar: `${a1}`,
-                    bid_date: '21.07.2015',
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
+                    bid_date: `${faker.date.recent()}`,
                     bid_amount: 8200,
                     bid_interest: 12.5
                 }, {
-                    bidder: '@invtGuru',
-                    bidder_avatar: `${a3}`,
-                    bid_date: '21.07.2015',
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
+                    bid_date: `${faker.date.recent()}`,
                     bid_amount: 6000,
                     bid_interest: 13
                 }, {
-                    bidder: '@banknotes97',
-                    bidder_avatar: `${a2}`,
-                    bid_date: '06.07.2017',
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
+                    bid_date: `${faker.date.recent()}`,
                     bid_amount: 340,
                     bid_interest: 10
                 }
             ]
         }, {
             id: uuid.v4(),
-            borrower_avatar: `${a5}`,
+            borrower_avatar: `${faker.image.avatar()}`,
             loan_amount: 120000,
             balance: 7600,
-            time_left: 12,
+            time_left: 90,
             loan_type: 'Payday loan',
-            description: 'It is a long established fact that a reader will be distracted by the readable c' +
-                    'ontent of a page when looking at its layout. The point of using Lorem Ipsum is t' +
-                    'hat it has...',
+            description: `${faker.lorem.paragraph()}`,
             loan_interest: 11.8,
-            risk_level: 'text-success',
+            risk_level: 'text-warning',
             risk_alert: 'hwarning',
             payment_period: 1,
             loan_progress: 10,
             bids: [
                 {
-                    bidder: '@batmanTrader',
-                    bidder_avatar: `${a1}`,
-                    bid_date: '21.07.2015',
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
+                    bid_date: `${faker.date.recent()}`,
                     bid_amount: 8200,
                     bid_interest: 12.5
                 }, {
-                    bidder: '@invtGuru',
-                    bidder_avatar: `${a3}`,
-                    bid_date: '21.07.2015',
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
+                    bid_date: `${faker.date.recent()}`,
                     bid_amount: 6000,
                     bid_interest: 13
                 }, {
-                    bidder: '@banknotes97',
-                    bidder_avatar: `${a4}`,
-                    bid_date: '06.07.2017',
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
+                    bid_date: `${faker.date.recent()}`,
                     bid_amount: 340,
                     bid_interest: 10
                 }
             ]
         }, {
             id: uuid.v4(),
-            borrower_avatar: `${a5}`,
+            borrower_avatar: `${faker.image.avatar()}`,
             loan_amount: '98,527.00',
             balance: 600,
-            time_left: 3,
+            time_left: 63,
             loan_type: 'Payday loan',
-            description: 'It is a long established fact that a reader will be distracted by the readable c' +
-                    'ontent of a page when looking at its layout. The point of using Lorem Ipsum is t' +
-                    'hat it has...',
+            description: `${faker.lorem.paragraph()}`,
             loan_interest: 11.8,
             risk_level: 'text-success',
             risk_alert: 'hgreen',
@@ -134,21 +122,21 @@ const initialState = {
             loan_progress: 20,
             bids: [
                 {
-                    bidder: '@batmanTrader',
-                    bidder_avatar: `${a1}`,
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: '14.09.2016',
                     bid_amount: 1100,
                     bid_interest: 12.5
                 }, {
-                    bidder: '@invtGuru',
-                    bidder_avatar: `${a3}`,
-                    bid_date: '21.07.2015',
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
+                    bid_date: `${faker.date.recent()}`,
                     bid_amount: 900,
                     bid_interest: 9.8
                 }, {
-                    bidder: '@banknotes97',
-                    bidder_avatar: `${a6}`,
-                    bid_date: '06.07.2017',
+                    bidder: `@${faker.name.findName()}`,
+                    bidder_avatar: `${faker.image.avatar()}`,
+                    bid_date: `${faker.date.recent()}`,
                     bid_amount: 910,
                     bid_interest: 11
                 }
@@ -158,43 +146,46 @@ const initialState = {
     fetching: false,
     fetch: false,
     error: null
+})
+
+const indexOfLoan = (state, nodeName, nodeId) => {
+    return state
+        .get(nodeName)
+        .findIndex(loan => {
+            return loan.get('id') === nodeId
+        })
+
 }
 
-export default function reducer(state = initialState, action) {
+export default function loanBids(state = initialState, action) {
     switch (action.type) {
         case "FETCH_LOAN":
             {
-                return {
-                    ...state,
-                    fetching: true
-                }
+                return state
             }
         case "FETCH_LOAN_REJECTED":
             {
-                return {
-                    ...state,
-                    fetching: false,
-                    error: action.payload
-                }
+                return state
             }
         case "FETCH_LOAN_FULFILLED":
             {
-                return {
-                    ...state,
-                    fetching: false,
-                    fetched: true
-
-                }
+                state.set('fetch', true)
+                return state
             }
         case "ADD_LOAN":
             {
-                return {
-                    ...state,
-                    fetched: true
-                }
+                const index = indexOfLoan(state, 'loans', action.payload.loan.id)
+                const count = state.getIn(['loans', index, 'bids']).count()
+                state = state.setIn([
+                    'loans', index, 'bids', count
+                ], action.payload.bid)
+                console.log(state.toJS())
+                console.log('total', count)
+                return state;
+
             }
         default:
-            {}
+            return state
     }
-    return state
+   
 }

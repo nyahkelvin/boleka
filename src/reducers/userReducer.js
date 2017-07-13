@@ -1,4 +1,6 @@
-const initialState = {
+import Immutable from 'immutable';
+
+const initialState = Immutable.fromJS({
     user: {
         id: null,
         username: null,
@@ -8,7 +10,7 @@ const initialState = {
     fetch: false,
     isLoggedIn: false,
     error: null
-}
+})
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
