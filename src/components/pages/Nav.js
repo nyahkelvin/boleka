@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Login from '../auth/Login'
+import LoginBar from '../pages/LoginBar'
 import logo from '../../images/boleka.png'
 
 import {Link} from 'react-router-dom'
@@ -48,7 +48,7 @@ class Nav extends Component {
                                 </li>
                             </ul>
                             <div id="navbar" className="navbar-collapse collapse">
-                                <Login/>
+                                <LoginBar/>
                             </div>
                         </div>
                     </div>

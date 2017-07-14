@@ -15,6 +15,8 @@ const initialState = Immutable.fromJS({
             description: `${faker.lorem.paragraph()}`,
             loan_interest: 11.8,
             risk_level: 'text-success',
+            risk_lable: 'label-success',
+            risk_progress: 'progress-bar-success',
             risk_alert: 'hgreen',
             payment_period: 8,
             loan_progress: 100,
@@ -49,6 +51,8 @@ const initialState = Immutable.fromJS({
             description: `${faker.lorem.paragraph()}`,
             loan_interest: 11.8,
             risk_level: 'text-success',
+            risk_lable: 'label-success',
+            risk_progress: 'progress-bar-success',
             risk_alert: 'hgreen',
             payment_period: 1,
             loan_progress: 70,
@@ -83,6 +87,8 @@ const initialState = Immutable.fromJS({
             description: `${faker.lorem.paragraph()}`,
             loan_interest: 11.8,
             risk_level: 'text-warning',
+            risk_lable: 'label-warning',
+            risk_progress: 'progress-bar-warning',
             risk_alert: 'hwarning',
             payment_period: 1,
             loan_progress: 10,
@@ -117,6 +123,8 @@ const initialState = Immutable.fromJS({
             description: `${faker.lorem.paragraph()}`,
             loan_interest: 11.8,
             risk_level: 'text-success',
+            risk_lable: 'label-success',
+            risk_progress: 'progress-bar-success',
             risk_alert: 'hgreen',
             payment_period: 1,
             loan_progress: 20,
@@ -124,7 +132,7 @@ const initialState = Immutable.fromJS({
                 {
                     bidder: `@${faker.name.findName()}`,
                     bidder_avatar: `${faker.image.avatar()}`,
-                    bid_date: '14.09.2016',
+                    bid_date: `${faker.date.recent()}`,
                     bid_amount: 1100,
                     bid_interest: 12.5
                 }, {
@@ -176,12 +184,10 @@ export default function loanBids(state = initialState, action) {
             {
                 const index = indexOfLoan(state, 'loans', action.payload.loan.id)
                 const count = state.getIn(['loans', index, 'bids']).count()
-                state = state.setIn([
+                return state.setIn([
                     'loans', index, 'bids', count
                 ], action.payload.bid)
-                console.log(state.toJS())
-                console.log('total', count)
-                return state;
+
 
             }
         default:

@@ -70,5 +70,8 @@ table { border: none; }
 .marketplace-sidebar{ border:1px solid #e5e5e5;background-color:#fff; padding: 15px; }
 .animation{ animation-delay: 0.5s; -webkit-animation-delay: 0.5s; }
 .padding-text{ padding: 5px; }
+.time-size{font-size: 5px;}
+.line-height{line-height: 2;}
+.hspace{padding-right: 5px;}
 
 #sidebar { position: -webkit-sticky; position: sticky;top: 0; }

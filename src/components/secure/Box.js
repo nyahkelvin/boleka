@@ -13,7 +13,7 @@ class Box extends Component {
                 return (
                     <div className={`hpanel ${loan.risk_alert} projects-separtor`} key={i}>
                         <div className="panel-body">
-                            <span className="label label-success pull-right">R{loan.balance}
+                            <span className={`label ${loan.risk_lable} pull-right`}>R{loan.balance}
                                 &nbsp;Short</span>
                             <div className="row">
                                 <div className="col-sm-8 animated-panel zoomIn animation">
@@ -54,7 +54,7 @@ class Box extends Component {
                                                     aria-valuemin="0"
                                                     aria-valuenow="50"
                                                     role="progressbar"
-                                                    className=" progress-bar progress-bar-success"></div>
+                                                    className={` progress-bar ${loan.risk_progress}`}></div>
                                             </div>
                                         </div>
                                     </div>

@@ -22,7 +22,6 @@ class Bidders extends Component {
 
     onSubmit(e) {
         e.preventDefault()
-        console.log('submitted')
         let newBid = {
             bidder: `@${faker.name.findName()}`,
             bidder_avatar: `${faker.image.avatar()}`,
@@ -62,7 +61,7 @@ class Bidders extends Component {
 
                             <div className="media-body">
                                 <span className="font-bold">{bid.bidder}</span>
-                                <small className="text-muted padding-text"><TimeAgo date={bid.bid_date} /></small>
+                                <small className="text-muted padding-text"><TimeAgo date={bid.bid_date}/></small>
 
                                 <div className="social-content">
                                     R{bid.bid_amount}

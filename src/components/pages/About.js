@@ -45,7 +45,7 @@ class About extends Component {
                                         <a
                                             href="http://www.twitter.com/kelvinashu"
                                             target="_blank"
-                                            rel="noopener noreferrer">Kelvin Ashu</a>
+                                            rel="noopener noreferrer"> Kelvin Ashu</a>
                                         in 2012, and it officially launched on April 27, 2013. 27 April being Freedom
                                         Day in South Africa was chosen as launch date to signify finanicial power given
                                         back to the people, eliminate traditional bankers with excessive charges.
