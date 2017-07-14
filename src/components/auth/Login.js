@@ -1,33 +1,49 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {login} from '../../actions/userActions'
 
 class Login extends Component {
     constructor(props) {
         super(props);
 
-        this.state ={
+        this.state = {
             username: '',
             password: ''
         }
 
-        this.onSubmit = this.onSubmit.bind(this);
-        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this
+            .onSubmit
+            .bind(this);
+        this.onChange = this
+            .onChange
+            .bind(this);
     }
 
-    onSubmit(e){
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.isLoggedIn) {
+            this
+                .props
+                .history
+                .push('/marketplace')
+        }
+    }
+
+    onSubmit(e) {
         e.preventDefault()
-        console.log('login submitted')
+        this
+            .props
+            .login(true)
+        this.setState({username: '', password: ''})
+    }
+
+    onChange(e) {
+        e.preventDefault()
         this.setState({
-            username: '',
-            password: ''
+            [e.target.name]: e.target.value
         })
     }
 
-    onChange(e){
-        e.preventDefault()
-        this.setState({[e.target.name]: e.target.value})
-    }
-    
     render() {
         return (
             <div id="login-overlay" className="modal-dialog">
@@ -66,14 +82,15 @@ class Login extends Component {
                                         </div>
                                         <div id="loginErrorMsg" className="alert alert-error hide">Wrong username og password</div>
                                         <button type="submit" className="btn btn-success btn-block">Login</button>
-                                        <br />
-                                        <a href="password-reset.html" >Forgot login details</a>
+                                        <br/>
+                                        <a href="password-reset.html">Forgot login details</a>
                                     </form>
                                 </div>
                             </div>
                             <div className="col-xs-6">
                                 <p className="lead">Register now for
-                                    <span className="text-success"> FREE</span>
+                                    <span className="text-success">
+                                        FREE</span>
                                 </p>
                                 <ul className="list-unstyled line-height">
                                     <li>
@@ -91,7 +108,8 @@ class Login extends Component {
                                     <li>
                                         <span className="fa fa-check text-success"></span>
                                         Get free alerts
-                                        <small> (Email &amp; SMS)</small>
+                                        <small>
+                                            (Email &amp; SMS)</small>
                                     </li>
                                     <li>
                                         <a href="/read-more/">
@@ -110,5 +128,11 @@ class Login extends Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        isLoggedIn: state.getIn(['user', 'isLoggedIn']),
+        redirectURL: state.getIn(['user', 'redirectURL'])
+    }
+}
 
-export default Login
+export default connect(mapStateToProps, {login})(Login)

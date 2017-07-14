@@ -73,5 +73,6 @@ table { border: none; }
 .time-size{font-size: 5px;}
 .line-height{line-height: 2;}
 .hspace{padding-right: 5px;}
+.hand-pointer{cursor: pointer;}
 
 #sidebar { position: -webkit-sticky; position: sticky;top: 0; }

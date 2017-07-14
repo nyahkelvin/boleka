@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import LoginBar from '../pages/LoginBar'
+import Logout from '../pages/Logout'
 import logo from '../../images/boleka.png'
+import {connect} from 'react-redux'
 
 import {Link} from 'react-router-dom'
 
@@ -48,7 +50,9 @@ class Nav extends Component {
                                 </li>
                             </ul>
                             <div id="navbar" className="navbar-collapse collapse">
-                                <LoginBar/>
+                                {!this.props.loggedIn
+                                    ? <LoginBar/>
+                                    : <Logout/>}
                             </div>
                         </div>
                     </div>
@@ -58,4 +62,10 @@ class Nav extends Component {
     }
 }
 
-export default Nav
+const mapStateToProps = (state) => {
+    return {
+        loggedIn: state.getIn(['user', 'isLoggedIn'])
+    }
+}
+
+export default connect(mapStateToProps)(Nav)

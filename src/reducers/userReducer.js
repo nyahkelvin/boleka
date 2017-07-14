@@ -9,6 +9,7 @@ const initialState = Immutable.fromJS({
     fetching: false,
     fetch: false,
     isLoggedIn: false,
+    redirectURL: null,
     error: null
 })
 
@@ -31,17 +32,18 @@ export default function reducer(state = initialState, action) {
             }
         case "FETCH_USER_FULFILLED":
             {
-                return {
-                    ...state,
-                    fetching: false,
-                    fetched: true,
-                    isLoggedIn: true,
-                    user: action.payload
-                }
+                return state
+            }
+        case "LOGIN":
+            {
+                return state.set('isLoggedIn', action.payload.isLoggedIn)
+            }
+        case "LOGOUT":
+            {
+                return state.set('isLoggedIn', action.payload.isLoggedIn)
             }
         default:
-            {}
+            return state
     }
-    return state
 
 }
