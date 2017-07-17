@@ -30,7 +30,7 @@ class Marketplace extends Component {
         <div className="col-md-8 ">
           <MarketBox loans={this.props.loan} addBid={this.props.addBid}/>
           <br />
-          <img className="center-block hand-pointer" src={refreshIcon} onClick={this.onClick} />
+          <img className="center-block hand-pointer" src={refreshIcon} onClick={this.onClick}  alt="refresh"/>
         </div>
         <Sidebar/>
 

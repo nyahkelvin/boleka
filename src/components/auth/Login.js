@@ -65,6 +65,7 @@ class Login extends Component {
                                                 name="username"
                                                 value={this.state.username}
                                                 onChange={this.onChange}
+                                                autoComplete="off"
                                                 title="Please enter you username"
                                                 placeholder="example@email.com"/>
                                             <span className="help-block"></span>
@@ -77,6 +78,7 @@ class Login extends Component {
                                                 name="password"
                                                 value={this.state.password}
                                                 onChange={this.onChange}
+                                                autoComplete="off"
                                                 title="Please enter your password"/>
                                             <span className="help-block"></span>
                                         </div>
