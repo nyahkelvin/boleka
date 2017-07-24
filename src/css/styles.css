@@ -1,7 +1,7 @@
-body {  padding-top: 30px;  padding-bottom: 20px;}
+body {  padding-top: 30px;  padding-bottom: 20px; font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;font-size: 1.5em;}
 .jumbotron {background-image:url('//www.bobitstudios.com/wp-content/uploads/2013/03/fabric_of_squares_gray.png');background-attachment:fixed;min-height:450px;margin-bottom:0px;border-bottom: 1px solid #e5e5e5;}
 .jumbotron .heading {  margin-top: 0;  padding-top: 20px;  font-size: 70px;  font-weight: normal;  line-height: 1;  letter-spacing: -1px;  background: none;}
-.jumbotron .subheading {  margin: 10px 0 0;  font-size: 21px;  line-height: 1.5;  color: #888;}
+.jumbotron .subheading {  margin: 10px 0 0;  font-size: 21px;  line-height: 1.5;  color: #660000;}
 .display-box-label {  font-size: 0.8em;  position: absolute;  right: -80px;  top: -8px;}
 .display-box {  background-color: #f7fcf7;  border-radius: 5px;  font-size: 0.8em;  height: 23px;  right: -140px;  padding-top: 2px;  position: absolute;  text-align: center;  top: -10px;  width: 50px;  font-weight: bold;}
 
@@ -75,4 +75,6 @@ table { border: none; }
 .hspace{padding-right: 5px;}
 .hand-pointer{cursor: pointer;}
 
-#sidebar { position: -webkit-sticky; position: sticky;top: 0; }
+#sidebar { position: -webkit-sticky; position: sticky; top: 0; }
+
+

@@ -79,8 +79,7 @@ class Footer extends Component {
                         </ul>
                     </div>
                 </div>
-                <div className="pull-right text-muted text-sm">&copy;2013-{currentYear}
-                    Boleka RIG Pty Ltd &reg;. All rights reserved</div>
+                <div className="pull-right text-muted text-sm">&copy;2013-{currentYear} Boleka RIG Pty Ltd &reg;. All rights reserved</div>
             </div>
         )
     }

@@ -26,19 +26,22 @@ const initialState = Immutable.fromJS({
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 3700,
-                    bid_interest: 11.5
+                    bid_interest: 11.5,
+                    bid_rating: 'fa fa-star-half-o'
                 }, {
                     bidder: `@${faker.name.findName()}`,
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 2300,
-                    bid_interest: 8
+                    bid_interest: 8,
+                    bid_rating: 'fa fa-star-half-o'
                 }, {
                     bidder: `@${faker.name.findName()}`,
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 150,
-                    bid_interest: 11
+                    bid_interest: 11,
+                    bid_rating: 'fa fa-star-half-o'
                 }
             ]
         }, {
@@ -62,19 +65,22 @@ const initialState = Immutable.fromJS({
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 8200,
-                    bid_interest: 12.5
+                    bid_interest: 12.5,
+                    bid_rating: 'fa fa-star-half-o'
                 }, {
                     bidder: `@${faker.name.findName()}`,
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 6000,
-                    bid_interest: 13
+                    bid_interest: 13,
+                    bid_rating: 'fa fa-star-half-o'
                 }, {
                     bidder: `@${faker.name.findName()}`,
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 340,
-                    bid_interest: 10
+                    bid_interest: 10,
+                    bid_rating: 'fa fa-star-half-o'
                 }
             ]
         }, {
@@ -98,19 +104,22 @@ const initialState = Immutable.fromJS({
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 8200,
-                    bid_interest: 12.5
+                    bid_interest: 12.5,
+                    bid_rating: 'fa fa-star-half-o'
                 }, {
                     bidder: `@${faker.name.findName()}`,
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 6000,
-                    bid_interest: 13
+                    bid_interest: 13,
+                    bid_rating: 'fa fa-star-half-o'
                 }, {
                     bidder: `@${faker.name.findName()}`,
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 340,
-                    bid_interest: 10
+                    bid_interest: 10,
+                    bid_rating: 'fa fa-star-half-o'
                 }
             ]
         }, {
@@ -134,19 +143,22 @@ const initialState = Immutable.fromJS({
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 1100,
-                    bid_interest: 12.5
+                    bid_interest: 12.5,
+                    bid_rating: 'fa fa-star-half-o'
                 }, {
                     bidder: `@${faker.name.findName()}`,
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 900,
-                    bid_interest: 9.8
+                    bid_interest: 9.8,
+                    bid_rating: 'fa fa-star-half-o'
                 }, {
                     bidder: `@${faker.name.findName()}`,
                     bidder_avatar: `${faker.image.avatar()}`,
                     bid_date: `${faker.date.recent()}`,
                     bid_amount: 910,
-                    bid_interest: 11
+                    bid_interest: 11,
+                    bid_rating: 'fa fa-star-half-o'
                 }
             ]
         }

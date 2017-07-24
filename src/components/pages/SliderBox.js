@@ -48,12 +48,7 @@ class SliderBox extends Component {
                                                         </strong>
                                                         <br/>
                                                         <small>This is an estimate only calculator. For actual values, please
-                                                            <a href="register.html">
-                                                                register</a>
-                                                            or
-                                                            <a href="login.html">
-                                                                sign in</a>
-                                                            .</small>
+                                                        <a href="register.html"> register</a> or<a href="login.html"> sign in</a>.</small>
                                                     </td>
                                                 </tr>
                                             </tbody>

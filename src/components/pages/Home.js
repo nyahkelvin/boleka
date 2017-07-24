@@ -26,10 +26,8 @@ class Home extends Component {
           <br/>
           <br/>
           <small>By clicking Sign Up. It's free & will always be! button, you agree to our
-            <a href="" target="_blank">
-              Terms of Service</a>
-            and you have read our
-            <a href="" target="_blank">Privacy Policy</a>
+            <a href="" target="_blank"> Terms of Service</a> and you have read our
+            <a href="" target="_blank"> Privacy Policy</a>
           </small>
 
         </div>

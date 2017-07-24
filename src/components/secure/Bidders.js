@@ -27,7 +27,8 @@ class Bidders extends Component {
             bidder_avatar: `${faker.image.avatar()}`,
             bid_date: new Date().toJSON(),
             bid_amount: this.state.bid_amount,
-            bid_interest: this.state.percentage
+            bid_interest: this.state.percentage,
+            bid_rating: 'fa fa-star-o'
         }
         this
             .props
@@ -67,7 +68,7 @@ class Bidders extends Component {
                                     R{bid.bid_amount}
                                     <span className="fa fa-angle-double-right padding-text"></span>
                                     {bid.bid_interest}% interest.
-                                    <span className="fa fa-star-half-o"></span>
+                                    <span className={bid.bid_rating}></span>
                                 </div>
                             </div>
                         </div>
