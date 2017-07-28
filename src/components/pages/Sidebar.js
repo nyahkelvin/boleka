@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import add from '../../images/plus.svg'
 
 class SideBar extends Component {
   render() {
@@ -40,22 +41,26 @@ class SideBar extends Component {
                 </li>
               </ul>
             </small>
-            <br />
             <hr />
-            <h4><label>Loan Filter</label></h4>
-            <hr />
+
             <div className="description">
               <label>Min Amount: </label><input type="range" min="0" max="100" />
               <label>Max Amount: </label><input type="range" min="0" max="100" />
               <br />
               <span><label>Completed:</label> Yes <input type="radio" name="completed" value="YES" /> &nbsp; No <input type="radio" name="completed" value="NO" /></span>
             </div>
+            <button className="btn btn-danger">Filter</button>
+
+
           </div>
         </div>
 
-        <div className="col-md-4">
+        <div className="col-md-4 center-div">
           <div className="marketplace-sidebar">
-            <button className="btn btn-danger">Filter</button>
+            <span className="hand-pointer">
+              <img src={add}  alt="Apply for a new loan" title="Apply for a new loan" />
+              <span className="apply-button">Apply for a Boleka Loan in minutes</span>
+            </span>
           </div>
         </div>
 

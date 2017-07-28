@@ -74,6 +74,7 @@ table { border: none; }
 .line-height{line-height: 2;}
 .hspace{padding-right: 5px;}
 .hand-pointer{cursor: pointer;}
+.apply-button{color: #31708f;}
 
 #sidebar { position: -webkit-sticky; position: sticky; top: 0; }
 
