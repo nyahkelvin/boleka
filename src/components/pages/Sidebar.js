@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import add from '../../images/plus.svg'
+import add from '../../images/cash.svg'
+import graph from '../../images/graph1.svg'
 
 class SideBar extends Component {
   render() {
@@ -49,17 +50,21 @@ class SideBar extends Component {
               <br />
               <span><label>Completed:</label> Yes <input type="radio" name="completed" value="YES" /> &nbsp; No <input type="radio" name="completed" value="NO" /></span>
             </div>
-            <button className="btn btn-danger">Filter</button>
+            <button className="btn btn-danger">Filter Loans</button>
 
 
           </div>
         </div>
 
-        <div className="col-md-4 center-div">
+        <div className="col-md-4">
           <div className="marketplace-sidebar">
             <span className="hand-pointer">
               <img src={add}  alt="Apply for a new loan" title="Apply for a new loan" />
-              <span className="apply-button">Apply for a Boleka Loan in minutes</span>
+              <span className="apply-button">Apply for a Loan</span>
+            </span>
+            <span className="hand-pointer">
+              <img src={graph}  alt="Invest on a loan" title="Invest on a loan" />
+              <span className="apply-button">Apply for a Loan</span>
             </span>
           </div>
         </div>
