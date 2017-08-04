@@ -1,6 +1,7 @@
 
 import Immutable from 'immutable';
 
+
 const initialState = Immutable.fromJS({
     loans: [],
     fetching: false,
@@ -25,7 +26,7 @@ export default function loanBids(state = initialState, action) {
             }
         case "FETCH_LOAN_REJECTED":
             {
-                return state
+                return state.setIn(['error'], Immutable.fromJS(action.payload.error))
             }
         case "FETCH_LOAN_FULFILLED":
             {
@@ -41,6 +42,10 @@ export default function loanBids(state = initialState, action) {
                 ], action.payload.bid)
 
 
+            }
+            case "CONNECTED": {
+                console.log('dispatched connected socket')
+                return state
             }
         default:
             return state
