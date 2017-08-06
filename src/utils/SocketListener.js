@@ -1,4 +1,3 @@
-import SockJS from 'sockjs-client'
 import EventBus from 'vertx3-eventbus-client'
 
 export const socket = new EventBus('http://localhost:7000/eventbus')

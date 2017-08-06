@@ -13,6 +13,7 @@ const indexOfLoan = (state, nodeName, nodeId) => {
     return state
         .get(nodeName)
         .findIndex(loan => {
+            console.log('loan in index ', nodeId)
             return loan.get('id') === nodeId
         })
 
@@ -35,18 +36,18 @@ export default function loanBids(state = initialState, action) {
             }
         case "ADD_BID":
             {
-                const index = indexOfLoan(state, 'loans', action.payload.loan.id)
+                const index = indexOfLoan(state, 'loans', action.payload.bid.loan_id)
                 const count = state.getIn(['loans', index, 'bids']).count()
                 return state.setIn([
                     'loans', index, 'bids', count
                 ], action.payload.bid)
 
+            }
+        case "CONNECTED": {
+            console.log('Socket Connected')
+            return state
+        }
 
-            }
-            case "CONNECTED": {
-                console.log('dispatched connected socket')
-                return state
-            }
         default:
             return state
     }

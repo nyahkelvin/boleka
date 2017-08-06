@@ -10,16 +10,15 @@ export function fetchLoans() {
     request.then(({ data }) => {
       dispatch({ type: "FETCH_LOAN_FULFILLED", payload: { 'loans': data } })
     })
-    .catch(err => {
-      dispatch({type: "FETCH_LOAN_REJECTED", payload: {'error': err}})
-    })
+      .catch(err => {
+        dispatch({ type: "FETCH_LOAN_REJECTED", payload: { 'error': err } })
+      })
   }
 
   //return {type: "FETCH_LOAN_FULFILLED", payload: 'Payload data'}
 }
 
-export function addBid(loan, bid) {
-  console.log('conent of bid ', bid)
+export function addBid(bid) {
   const request = axios.post(`${BaseURL}api/bid`, bid)
 
   return (dispatch) => {
@@ -28,8 +27,7 @@ export function addBid(loan, bid) {
         {
           type: "ADD_BID",
           payload: {
-            'bid': bid,
-            'loan': loan
+            'bid': bid
           }
         }
       )

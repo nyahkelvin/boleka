@@ -1,7 +1,9 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import TimeAgo from 'react-timeago'
 import faker from 'faker'
+
+import { socket } from '../../utils/SocketListener'
 
 
 class Bidders extends Component {
@@ -23,6 +25,7 @@ class Bidders extends Component {
     onSubmit(e) {
         e.preventDefault()
         let newBid = {
+            loan_id: this.props.loan.id,
             bidder: `@${faker.name.findName()}`,
             bidder_avatar: `${faker.image.avatar()}`,
             bid_date: new Date().toJSON(),
@@ -30,15 +33,15 @@ class Bidders extends Component {
             bid_interest: this.state.percentage,
             bid_rating: 'fa fa-star-o'
         }
-        this
-            .props
-            .addBid(this.props.loan, newBid)
-            this.setState({
-                percentage: '',
-                bid_amount: ''
-            })
 
+        this.setState({
+            percentage: '',
+            bid_amount: ''
+        })
+        const eb = socket
+        eb.send('add-new-bid', newBid)
     }
+
 
     onChange(e) {
         e.preventDefault()
@@ -57,12 +60,12 @@ class Bidders extends Component {
                     <div className="social-talk" key={i}>
                         <div className="media social-profile clearfix">
                             <a className="pull-left">
-                                <img src={bid.bidder_avatar} alt="profile"/>
+                                <img src={bid.bidder_avatar} alt="profile" />
                             </a>
 
                             <div className="media-body">
                                 <span className="font-bold">{bid.bidder}</span>
-                                <small className="text-muted padding-text"><TimeAgo date={bid.bid_date}/></small>
+                                <small className="text-muted padding-text"><TimeAgo date={bid.bid_date} /></small>
 
                                 <div className="social-content">
                                     R{bid.bid_amount}
@@ -81,7 +84,7 @@ class Bidders extends Component {
                 {/**
                Start of loan footer
                */}
-                <hr/>
+                <hr />
                 <div className="form-inline ">
                     <form onSubmit={this.onSubmit}>
                         <div className="row">
@@ -96,7 +99,7 @@ class Bidders extends Component {
                                             autoComplete="off"
                                             className="form-control"
                                             name="bid_amount"
-                                            placeholder="Amount"/>
+                                            placeholder="Amount" />
                                     </div>
                                 </div>
                                 <div className="col-xs-3">
@@ -110,7 +113,7 @@ class Bidders extends Component {
                                             name="percentage"
                                             maxLength="4"
                                             id="interest"
-                                            placeholder="%"/>
+                                            placeholder="%" />
                                         <div className="input-group-addon">%</div>
                                     </div>
                                 </div>

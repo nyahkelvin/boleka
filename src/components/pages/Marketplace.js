@@ -25,17 +25,15 @@ class Marketplace extends Component {
   }
 
   componentDidMount() {
-    console.log('compoent has mounted')
-
     const eb = socket;
-    const self = this;
     // Listen for messages coming in
-    eb.registerHandler('chat.to.client', function (error, message) {
-      console.log('received a message: ' + JSON.stringify(message));
-    });
-
-    // send a message
-    eb.send('chat.to.server', { name: 'tim', age: 587 });
+    
+      eb.registerHandler('new-bid-added', (error, message) => {
+        this
+          .props
+          .addBid(JSON.parse(message.body))
+      })
+    
 
   }
 
@@ -44,7 +42,7 @@ class Marketplace extends Component {
 
       <div className="row projects">
         <div className="col-md-8 ">
-          <MarketBox loans={this.props.loan} addBid={this.props.addBid} />
+          <MarketBox loans={this.props.loan} />
           <br />
           <img className="center-block hand-pointer" src={refreshIcon} onClick={this.onClick} alt="refresh" />
         </div>
