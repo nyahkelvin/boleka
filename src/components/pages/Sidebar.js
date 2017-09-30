@@ -46,28 +46,27 @@ class SideBar extends Component {
 
             <div className="description">
               <label>Min Amount: </label><input type="range" min="0" max="100" />
-              <label>Max Amount: </label><input type="range" min="0" max="100" />
+              <label>Max Amount: </label><input type="range" min="10" max="100" />
               <br />
               <span><label>Completed:</label> Yes <input type="radio" name="completed" value="YES" /> &nbsp; No <input type="radio" name="completed" value="NO" /></span>
             </div>
             <button className="btn btn-danger">Filter Loans</button>
-
-
           </div>
-        </div>
 
-        <div className="col-md-4">
-          <div className="marketplace-sidebar">
-            <span className="hand-pointer">
-              <img src={add}  alt="Apply for a new loan" title="Apply for a new loan" />
-              <span className="apply-button">Apply for a Loan</span>
-            </span>
-            <span className="hand-pointer">
-              <img src={graph}  alt="Invest on a loan" title="Invest on a loan" />
-              <span className="apply-button">Apply for a Loan</span>
-            </span>
+
+          
+            <div className="marketplace-sidebar">
+              <span className="hand-pointer">
+                <img src={add} alt="Apply for a new loan" title="Apply for a new loan" />
+                <span className="apply-button">Apply for a Loan</span>
+              </span>
+              <span className="hand-pointer">
+                <img src={graph} alt="Invest on a loan" title="Invest on a loan" />
+                <span className="apply-button">Dashboard</span>
+              </span>
+            </div>
           </div>
-        </div>
+        
 
       </div>
     )

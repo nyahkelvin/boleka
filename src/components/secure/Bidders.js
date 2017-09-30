@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 
 import TimeAgo from 'react-timeago'
 import faker from 'faker'
+import { connect } from 'react-redux'
 
-import { socket } from '../../utils/SocketListener'
+
+import { addBid } from '../../actions/loanActions'
 
 
 class Bidders extends Component {
@@ -25,7 +27,7 @@ class Bidders extends Component {
     onSubmit(e) {
         e.preventDefault()
         let newBid = {
-            loan_id: this.props.loan.id,
+            loan_id: this.props.loan.loan_id,
             bidder: `@${faker.name.findName()}`,
             bidder_avatar: `${faker.image.avatar()}`,
             bid_date: new Date().toJSON(),
@@ -38,10 +40,11 @@ class Bidders extends Component {
             percentage: '',
             bid_amount: ''
         })
-        const eb = socket
-        eb.send('add-new-bid', newBid)
-    }
 
+        this.props.addBid(newBid)
+
+
+    }
 
     onChange(e) {
         e.preventDefault()
@@ -79,6 +82,7 @@ class Bidders extends Component {
                 )
             })
         return (
+            
             <div className="panel-footer">
                 {bids}
                 {/**
@@ -134,4 +138,4 @@ class Bidders extends Component {
     }
 }
 
-export default Bidders
+export default connect(null, { addBid })(Bidders)

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux'
 
 import Bidders from './Bidders'
 
@@ -79,7 +80,7 @@ class Box extends Component {
                             </div>
                         </div>
                         {/* Bidders */}
-                        <Bidders loan={loan} addBid={this.props.addBid}/>
+                        <Bidders loan={loan} handleAddBid={this.props.handleAddBid} /> 
                     </div>
                 )
             })
@@ -91,4 +92,8 @@ class Box extends Component {
     }
 }
 
-export default Box;
+const mapSateToProps = state => {
+  return { loans: state.get('loans') }
+}
+
+export default connect(mapSateToProps)(Box)

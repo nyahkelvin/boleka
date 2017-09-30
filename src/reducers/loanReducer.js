@@ -10,11 +10,12 @@ const initialState = Immutable.fromJS({
 })
 
 const indexOfLoan = (state, nodeName, nodeId) => {
+    console.log('here is loan_id ', nodeId)
     return state
         .get(nodeName)
         .findIndex(loan => {
-            console.log('loan in index ', nodeId)
-            return loan.get('id') === nodeId
+            
+            return loan.get('loan_id') === nodeId
         })
 
 }
@@ -31,22 +32,21 @@ export default function loanBids(state = initialState, action) {
             }
         case "FETCH_LOAN_FULFILLED":
             {
-                const newState = state.setIn(['loans'], Immutable.fromJS(action.payload.loans))
-                return newState
+                return state.setIn(['loans'], Immutable.fromJS(action.payload.loans))
+
             }
         case "ADD_BID":
             {
                 const index = indexOfLoan(state, 'loans', action.payload.bid.loan_id)
                 const count = state.getIn(['loans', index, 'bids']).count()
-                return state.setIn([
+                const newState = state.setIn([
                     'loans', index, 'bids', count
                 ], action.payload.bid)
 
+                console.log('Add bid foo ',newState.toJS())
+                return newState
+
             }
-        case "CONNECTED": {
-            console.log('Socket Connected')
-            return state
-        }
 
         default:
             return state

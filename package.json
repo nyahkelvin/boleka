@@ -12,6 +12,7 @@
     "react-rangeslider": "^2.1.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
+    "react-router-redux": "^4.0.8",
     "react-select": "^1.0.0-rc.5",
     "react-timeago": "3.2.1",
     "redux": "^3.7.1",

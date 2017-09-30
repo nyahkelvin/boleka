@@ -3,14 +3,16 @@ import { connect } from 'react-redux'
 
 import MarketBox from '../secure/MarketBox'
 import Sidebar from './Sidebar'
-import { fetchLoans, addBid } from '../../actions/loanActions'
-import { socket } from '../../utils/SocketListener'
+
+import { fetchLoans } from '../../actions/loanActions'
+
 import refreshIcon from '../../images/refresh.svg'
 
 class Marketplace extends Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
+
   }
 
   onClick(e) {
@@ -24,25 +26,14 @@ class Marketplace extends Component {
       .fetchLoans()
   }
 
-  componentDidMount() {
-    const eb = socket;
-    // Listen for messages coming in
-    
-      eb.registerHandler('new-bid-added', (error, message) => {
-        this
-          .props
-          .addBid(JSON.parse(message.body))
-      })
-    
-
-  }
+ 
 
   render() {
     return (
 
       <div className="row projects">
         <div className="col-md-8 ">
-          <MarketBox loans={this.props.loan} />
+          <MarketBox handleAddBid={this.handleAddBid} />
           <br />
           <img className="center-block hand-pointer" src={refreshIcon} onClick={this.onClick} alt="refresh" />
         </div>
@@ -53,9 +44,7 @@ class Marketplace extends Component {
   }
 }
 
-const mapSateToProps = state => {
-  return { loan: state.get('loans') }
-}
 
 
-export default connect(mapSateToProps, { fetchLoans, addBid })(Marketplace)
+
+export default connect(null, { fetchLoans })(Marketplace) 

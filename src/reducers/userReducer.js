@@ -3,8 +3,7 @@ import Immutable from 'immutable';
 const initialState = Immutable.fromJS({
     user: {
         id: null,
-        username: null,
-        password: null
+        username: null
     },
     fetching: false,
     fetch: false,
@@ -15,21 +14,6 @@ const initialState = Immutable.fromJS({
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
-        case "FETCH_USER":
-            {
-                return {
-                    ...state,
-                    fetching: true
-                }
-            }
-        case "FETCH_USER_REJECTED":
-            {
-                return {
-                    ...state,
-                    fetching: false,
-                    error: action.payload
-                }
-            }
         case "FETCH_USER_FULFILLED":
             {
                 return state
